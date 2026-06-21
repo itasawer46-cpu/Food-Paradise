@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmed - Food Paradise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-950 text-white min-h-screen flex items-center justify-center p-6">
+<div class="bg-zinc-800 border border-amber-400 max-w-xl relative overflow-hidden rounded-2xl p-8 w-full text-center">
+    <div class="absolute top-0 h-2 right-0 left-0 bg-amber-400"></div>
+    <div class="bg-orange-500/10 p-10 rounded-full text-4xl animate-bounce md:text-5xl border border-orange-500/30 w-20 h-20 flex justify-center items-center mx-auto">🎉</div>
+    <h2 class="text-white text-2xl md:text-3xl font-bold tracking-tighter uppercase">Order
+    <span class="text-amber-400 text-2xl md:text-3xl font-bold tracking-tighter uppercase">confirmed!</span>
+    </h2>
+    <p class="mt-6 text-zinc-300 font-light text-lg">Thanks, <span class="text-amber-400 text-xl font-bold"><%= name %></span> your order is successfully booked</p>
+    <div class="bg-zinc-950 border border-zinc-800/80 rounded-xl p-4 mb-8 text-left space-y-2 mt-6">
+        <div class="flex justify-between">
+            <span>Status</span>
+            <span class="text-green-400 font-bold tracking-tight text-lg">Pending Confirmation</span>
+        </div>
+        <div class="delivery flex items-center justify-between w-full">
+            <span>Delivery</span>
+            <span>Tiffin Reaches Readlly</span>
+        </div>
+    </div>
+    <a href="/menu" class="block w-full bg-amber-500 text-black p-2 rounded-lg font-semibold hover:bg-black hover:text-amber-500 hover:border hover:border-amber-500 transition-all duration-300 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]">Back to menu</a>
+    <a href="/" class="block w-full bg-amber-500 text-black p-2 rounded-lg font-semibold hover:bg-black hover:text-amber-500 hover:border hover:border-amber-500 transition-all duration-300 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] mt-3">Back to Home</a>
+
+</div>
+
+     <!-- <div class="max-w-md w-full bg-zinc-900 border border-zinc-800 p-8 rounded-2xl shadow-2xl text-center relative overflow-hidden">
+        
+        <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-orange-500 to-amber-500"></div>
+
+        <div class="w-20 h-20 bg-orange-500/10 border border-orange-500/30 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl animate-bounce">
+            🎉
+        </div>
+
+        <h2 class="text-2xl font-black uppercase tracking-tight mb-2">
+            Order <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">Confirmed!</span>
+        </h2>
+        
+        <p class="text-zinc-400 text-sm mb-6">
+            Shukriya <span class="text-orange-400 font-bold text-base"><%= name %></span>! Tumhara order successfully book ho gaya ha.
+        </p>
+
+        <div class="bg-zinc-950 border border-zinc-800/80 rounded-xl p-4 mb-8 text-left space-y-2">
+            <div class="flex justify-between text-xs">
+                <span class="text-zinc-500">Status:</span>
+                <span class="text-emerald-400 font-bold uppercase tracking-wider">Pending Confirmation</span>
+            </div>
+            <div class="flex justify-between text-xs">
+                <span class="text-zinc-500">Delivery:</span>
+                <span class="text-zinc-300">Jaldi Tiffin Pahunchega 🚀</span>
+            </div>
+        </div>
+
+        <div class="space-y-3">
+            <a href="/menu" class="block w-full bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-xs uppercase tracking-wider py-3 rounded-xl transition-all">
+                Back To Menu
+            </a>
+        </div>
+    </div>  -->
+
+</body>
+</html>

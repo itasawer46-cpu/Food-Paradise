@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food-Paradise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black">
+        <nav class="sticky top-0 z-50 bg-zinc-900 text-white flex h-16 items-center justify-between px-8 tracking-wider backdrop-blur border-b-2 border-amber-500/30 hover:shadow-[0_0_20px_rgba(245,158,11,0.6)]">
+            <a href="/" class="font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-600 cursor-pointer text-2xl hover:from-amber-600 hover:to-amber-300 transition-all duration-1000">Food Paradise</a>
+            <div class="hidden gap-6 md:flex hidden:gap-6">
+                <a href="/" class="text-xl text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-600 cursor-pointer hover:from-amber-600 hover:to-amber-300 relative after:content-[''] after:absolute after:w-0 after:left-0 after:h-[3px] after:bg-amber-400 after:-bottom-1 hover:after:w-full after:transition-all after:duration-300 hover:scale-105 transition-all duration-100">Home</a>
+                <a href="/menu" class="text-xl text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-600 cursor-pointer hover:from-amber-600 hover:to-amber-300 relative after:content-[''] after:absolute after:w-0 after:left-0 after:h-[3px] after:bg-amber-400 after:-bottom-1 hover:after:w-full after:transition-all after:duration-300 hover:scale-105 transition-all duration-100">Food Menu</a>
+                <a href="/order" class="text-xl text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-600 cursor-pointer hover:from-amber-600 hover:to-amber-300 relative after:content-[''] after:absolute after:w-0 after:left-0 after:h-[3px] after:bg-amber-400 after:-bottom-1 hover:after:w-full after:transition-all after:duration-300 hover:scale-105 transition-all duration-100">Order Now</a>
+            </div>
+            <div class="action">
+                <a href="/order" class="bg-amber-500 text-black p-2 rounded-lg font-semibold hover:bg-black hover:text-amber-500 hover:border hover:border-amber-500 transition-all duration-300 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]">Subscribe Now</a>
+            </div>
+        </nav>
+
+    <section class="relative w-full h-[90vh] bg-cover bg-no-repeat bg-center text-white" style="background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1920&auto=format&fit=crop');">
+   <div class="absolute inset-0 bg-black/50 backdrop-blur-[1px]"></div>
+   <div class="relative z-10 text-center top-5 px-6 flex flex-col justify-center items-center max-w-4xl mx-auto gap-9">
+       <span class="inline-block border border-orange-500/30 p-2 bg-orange-500/20 text-white rounded-full animate-pulse">🥣 Fresh & Hygienic Tiffin Service</span>
+       <div class="motivation font-black text-4xl uppercase tracking-wide sm:text-5xl md:text-7xl">
+           <p class="text-white">Homemade meal,</p>
+            <p class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-600">Delivered to your doorstep.</p>
+       </div>
+       <p class="text-zinc-300 text-base mx-auto sm:text-lg md:text-lg font-light leading-relaxed">Premium tiffin and mess service tailored for hostel students and corporate professionals. Enjoy hot, healthy, and delicious meals daily with zero delivery charges!</p>
+       <div class="buttons flex gap-3">
+        <a href="/menu" class="bg-amber-500 text-black p-2 rounded-lg font-semibold hover:bg-black hover:text-amber-500 hover:border hover:border-amber-500 transition-all duration-300 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]">Explore Daily Menu</a>
+        <a href="/order" class="bg-zinc-700/90 text-white p-2 rounded-lg font-semibold hover:bg-white hover:text-zinc-700 hover:border hover:border-amber-500 transition-all duration-300 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]">Book Subscription</a>
+       </div>
+   </div>
+    </section>
+
+
+<section class="my-10">
+    <div class="flex flex-col items-center gap-3">
+        <h1 class="uppercase text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-600 text-3xl sm:text-4xl md:text-5xl font-bold">How it works</h1>
+        <p class="text-zinc-300 font-light">Get fresh, delicious homemade meals delivered straight to you in three simple steps.</p>
+    </div>
+    <div class="cards grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 p-5 gap-6">
+        <a href="/menu" class="card1 group border border-zinc-800 bg-gray-900 p-5 rounded-2xl hover:border-amber-500 hover:border-2 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_0_20px_rgba(245,158,11,0.6)]">
+            <div class="menu_image p-2 bg-gray-700 inline-block rounded-xl border border-zinc-400 group-hover:bg-gray-900 group-hover:border-amber-500">
+                <img src="/booster.png" alt="" class="w-full h-24 bg-center bg-cover bg-no-repeat">
+            </div>
+            <div class="flex flex-col mt-3 gap-3 p-2">
+                <p class="text-white font-bold text-xl"> 1. Choose Your Plan </p>
+                <p class="text-zinc-300 w-full">Select from our weekly or monthly breakfast, lunch, or dinner subscriptions that fit your schedule.</p>
+            </div>
+
+        </a>
+         <a href="/menu" class="card2 group border border-zinc-800 bg-gray-900 p-5 rounded-2xl hover:border-amber-500 hover:border-2 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_0_20px_rgba(245,158,11,0.6)]">
+            <div class="menu_image p-2 bg-gray-700 inline-block rounded-xl border border-zinc-400 group-hover:bg-gray-900 group-hover:border-amber-500">
+                <img src="/chef.png" alt="" class="w-full h-24 bg-center bg-cover bg-no-repeat">
+            </div>
+            <div class="flex flex-col mt-3 gap-3 p-2">
+                <p class="text-white font-bold text-xl">2. We Cook Fresh </p>
+                <p class="text-zinc-300 w-full">Our expert chefs prepare your meals using fresh ingredients, completely hygienic environments, and love.</p>
+            </div>
+
+        </a>
+         <a href="/menu" class="card3 group border border-zinc-800 bg-gray-900 p-5 rounded-2xl hover:border-amber-500 hover:border-2 hover:-translate-y-2 transition-all duration-300 hover:shadow-[0_0_20px_rgba(245,158,11,0.6)]">
+            <div class="menu_image p-2 bg-gray-700 inline-block rounded-xl border border-zinc-400 group-hover:bg-gray-900 group-hover:border-amber-500">
+                <img src="/delivery.png" alt="" class="w-full h-24 bg-center bg-cover bg-no-repeat">
+            </div>
+            <div class="flex flex-col mt-3 gap-3 p-2">
+                <p class="text-white font-bold text-xl"> 3. Fast Doorstep Delivery  </p>
+                <p class="text-zinc-300 w-full">Your tiffin box gets packed instantly and reaches your hostel room or workplace right on your specified meal time.<p>
+            </div>
+
+        </a>
+    </div>
+</section>
+<!-- 📋 FOOTER SECTION -->
+<footer class="bg-zinc-950 text-zinc-400 py-12 border-t border-zinc-900">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+        
+        <!-- Column 1: Brand Info -->
+        <div class="md:col-span-2 flex flex-col gap-4">
+            <div class="text-2xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">
+                FOOD PARADISE 🥣
+            </div>
+            <p class="text-sm text-zinc-500 max-w-sm leading-relaxed">
+                Premium tiffin and daily mess service bringing hot, hygienic, and delicious homemade meals straight to your doorstep. Perfect for students and corporate professionals.
+            </p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="flex flex-col gap-3">
+            <h4 class="text-white font-bold tracking-wide uppercase text-sm">Quick Links</h4>
+            <a href="/" class="hover:text-orange-400 text-sm transition-all duration-300">Home</a>
+            <a href="/menu" class="hover:text-orange-400 text-sm transition-all duration-300">Food Menu</a>
+            <a href="/order" class="hover:text-orange-400 text-sm transition-all duration-300">Book Subscription</a>
+        </div>
+
+        <!-- Column 3: Contact Info -->
+        <div class="flex flex-col gap-3">
+            <h4 class="text-white font-bold tracking-wide uppercase text-sm">Contact Us</h4>
+            <p class="text-sm text-zinc-500">📍 University of Gujrat, Main Campus</p>
+            <p class="text-sm text-zinc-500">📞 +92 300 1234567</p>
+            <p class="text-sm text-zinc-500">✉️ support@foodparadise.com</p>
+        </div>
+
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="max-w-6xl mx-auto px-6 mt-12 pt-6 border-t border-zinc-900/60 text-center text-xs text-zinc-600 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p>&copy; 2026 Food Paradise. All rights reserved.</p>
+        <p>Built with ❤️ by Muhammad Husnain</p>
+    </div>
+</footer>
+</body>
+</html>

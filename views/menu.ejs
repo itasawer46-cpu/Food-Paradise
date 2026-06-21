@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu - Food Paradise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-950 text-white min-h-screen font-sans">
+
+    <section class="text-center mx-auto py-16 px-6 max-w-6xl">
+        <p class="bg-orange-300/20 border border-gray-200 px-4 py-2 inline-block mx-auto rounded-2xl font-bold uppercase text-amber-300 hover:border hover:border-amber-400 hover:shadow-[0_0_20px_rgba(245,158,11,0.6)] transition-all duration-300">😋 Today's Special</p>
+        <h1 class="text-transparent bg-gradient-to-r bg-clip-text from-amber-300 to-amber-600 text-4xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tight mt-4">Our Delicious menu</h1>
+        <p class="text-zinc-400 text-sm md:text-base max-w-md mx-auto mt-3">Freshly prepared, hygienic, and budget-friendly meals for students and professionals.</p>
+
+        <div class="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-10 gap-5">
+            <% if (items.length === 0) { %>
+             <p class="text-zinc-500 text-center col-span-3">No food items found in the database.</p>
+            <% } else {%>
+           <% items.forEach( function(food) { %>
+            <div class="bg-zinc-900/40 border border-zinc-400 rounded-xl hover:border hover:border-amber-400 hover:shadow-[0_0_20px_rgba(245,158,11,0.6)] transition-all duration-300 group flex flex-col items-start px-4 py-4 gap-6 justify-between">
+                <div class="p-4 bg-gray-700 inline-block rounded-xl border border-zinc-400 group-hover:bg-gray-900 group-hover:border-amber-500 relative">
+                    <img src="<%= food.image %>" alt="<%= food.name %>" class="w-full h-48 group-hover:scale-110 transition-all duration-300">
+                    <span class="absolute top-0.5 left-1 bg-black text-amber-500 font-semibold p-1 cursor-pointer rounded-xl"><%= food.category %></span>
+                </div>
+                <div class="food_info">
+                    <p class="text-white font-bold tracking-tighter text-2xl"><%= food.name %></p>
+                    <p class="text-zinc-300 font-medium"><%= food.description  %></p>
+                </div>
+                <div class="price flex items-center gap-[100px]">
+                    <p class="text-amber-400 text-xl md:text-2xl font-bold">Rs. <%= food.price %></p>
+                    <a href="/order" class="bg-amber-500 text-black p-2 rounded-lg font-semibold hover:bg-black hover:text-amber-500 hover:border hover:border-amber-500 transition-all duration-300 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]">Order Now</a>
+                </div>
+            </div>
+            
+           <% }) %>
+            <%} %>
+        </div>
+    </section>
+
+<!-- 
+    <section class="py-16 text-center max-w-6xl mx-auto px-6">
+        <span class="text-orange-500 font-bold text-xs tracking-widest uppercase bg-orange-500/10 border border-orange-500/20 px-4 py-1.5 rounded-full">
+            😋 Today's Special
+        </span>
+        <h1 class="text-4xl md:text-6xl font-black mt-4 uppercase tracking-tight">
+            Our Delicious <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">Menu</span>
+        </h1>
+        <p class="text-zinc-400 text-sm md:text-base max-w-md mx-auto mt-3">
+            Freshly prepared, hygienic, and budget-friendly meals for students and professionals.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-16 text-left">
+            
+            <% if(items.length === 0) { %>
+                <p class="text-zinc-500 text-center col-span-3">No food items found in the database.</p>
+            <% } else { %>
+                <% items.forEach(function(food) { %>
+                    
+                    <div class="bg-zinc-900/40 border border-zinc-800/80 rounded-2xl overflow-hidden shadow-xl hover:border-orange-500/30 hover:shadow-[0_0_30px_rgba(245,158,11,0.05)] transition-all duration-300 group flex flex-col justify-between">
+                        
+                        <div>
+                            <div class="relative w-full h-48 bg-zinc-800 overflow-hidden">
+                                <img src="<%= food.image %>" alt="<%= food.name %>" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                                <span class="absolute top-4 left-4 bg-zinc-950/80 border border-zinc-800 backdrop-blur-md text-orange-400 font-bold text-xs px-3 py-1 rounded-lg">
+                                    <%= food.category %>
+                                </span>
+                            </div>
+
+                            <div class="p-6">
+                                <h3 class="text-xl font-black text-white group-hover:text-orange-400 transition-all duration-300">
+                                    <%= food.name %>
+                                </h3>
+                                <p class="text-zinc-400 text-sm mt-2 leading-relaxed font-light">
+                                    <%= food.description %>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 pt-0 flex items-center justify-between mt-4">
+                            <span class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400">
+                                Rs. <%= food.price %>
+                            </span>
+                            <a href="/order" class="bg-orange-500 hover:bg-black hover:text-orange-400 border border-orange-500 text-black font-black text-xs tracking-wider uppercase px-4 py-2.5 rounded-xl shadow-md transition-all duration-300">
+                                Order Now
+                            </a>
+                        </div>
+
+                    </div>
+
+                <% })%>
+            <% } %>
+
+        </div>
+    </section> -->
+
+</body>
+</html>
