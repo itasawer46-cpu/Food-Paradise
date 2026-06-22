@@ -11,9 +11,9 @@
 
 <body class="bg-zinc-950 text-white min-h-screen pt-6 p-12 font-sans">
 
-    <div class=" mx-auto bg-zinc-800 flex justify-between items-center pb-5 mb-8 border-b border-amber-400 pt-3 p-8 rounded-xl">
+    <div class=" mx-auto bg-zinc-800 flex justify-between items-center pb-5 mb-8 border-b border-amber-400 pt-1 md:pt-3 p-4 rounded-xl md:p-8">
         <div>
-            <p class="text-amber-500 text-4xl font-bold tracking-tight uppercase">Food paradise <span class="text-white">dashboard</span></p>
+            <p class="text-amber-500 text-2xl font-bold tracking-tight uppercase md:text-3xl">Food paradise <span class="text-white">dashboard</span></p>
             <p class="text-zinc-300 text-sm">Manage today's daily mess and tiffin subscriptions</p>
         </div>
         <div class="bg-blue-700/30 rounded-xl p-4 text-center hover:bg-amber-400/30 transition-all duration-300">
@@ -54,7 +54,7 @@
                </td>
                <td>
                 <% if (order.foodItem) { %>
-                <span class="bg-orange-400/10 animate-pulse border border-amber-400 p-2 rounded-xl text-amber-300 "> <%= order.foodItem.name %></span>
+                <span class="bg-orange-400/10 animate-pulse border border-amber-400 p-1 rounded-xl text-amber-300 text-sm md:text-lg md:p-2"> <%= order.foodItem.name %></span>
                 <% } %>
                </td>
                <td class="py-4 px-6 text-lg font-bold"><%= order.planType %></td>
