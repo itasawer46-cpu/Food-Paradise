@@ -99,6 +99,17 @@ app.post('/place-order', async (req, res) => {
     }
 });
 
+app.get('/admin/orders',async (req,res)=>{
+try{
+    const allOrders =await Order.find().populate('foodItem').sort({createdAt:-1});
+res.render('admin-dashboard',{orders:allOrders});
+}
+catch(err){
+    console.log('Dashboard Error',err.message);
+    res.status(500).send("Error during load Dashboard")
+}
+})
+
 if (process.env.NODE_ENV !== 'production') {
     app.listen(3000, () => console.log("Server running on port 3000"));
 }

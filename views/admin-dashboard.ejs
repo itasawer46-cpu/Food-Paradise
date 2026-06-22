@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Food Paradise</title>
+    <!-- Tailwind CSS link kiya taake design VIP lage -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-zinc-950 text-white min-h-screen pt-6 p-12 font-sans">
+
+    <div class=" mx-auto bg-zinc-800 flex justify-between items-center pb-5 mb-8 border-b border-amber-400 pt-3 p-8 rounded-xl">
+        <div>
+            <p class="text-amber-500 text-4xl font-bold tracking-tight uppercase">Food paradise <span class="text-white">dashboard</span></p>
+            <p class="text-zinc-300 text-sm">Manage today's daily mess and tiffin subscriptions</p>
+        </div>
+        <div class="bg-blue-700/30 rounded-xl p-4 text-center hover:bg-amber-400/30 transition-all duration-300">
+            <p class="text-zinc-300">Total orders</p>
+            <p class="text-amber-400 font-bold text-2xl tracking-tight"><%= orders.length%></p>
+        </div>
+</div>
+
+<div class="bg-zinc-900 border rounded-2xl overflow-hidden shadow-2xl">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+    <thead>
+        <tr class="bg-zinc-950 text-zinc-400 text-xs uppercase tracking-wider border-b border-zinc-800">
+            <th class="py-4 px-6 uppercase">customer details</th>
+            <th class="py-4 px-6 uppercase">address / rooms</th>
+            <th class="py-4 px-6 uppercase">meal details</th>
+            <th class="py-4 px-6 uppercase">plan type</th>
+            <th class="py-4 px-6 uppercase">status</th>
+        </tr>
+    </thead>
+
+    <tbody class="divide-y divide-zinc-800/60 text-sm">
+        <% if (orders.length===0) { %>
+         <tr>
+            <td colspan="5" class="text-center py-12 text-zinc-500 font-medium">
+             Abhi tak koi order place nahi hua 😴
+            </td>
+         </tr>
+        <% }else{%>
+           <% orders.forEach(order => { %>
+            <tr>
+               <td class="py-4 px-6">
+                <div class="text-amber-400 font-bold text-lg"><%= order.customerName %></div>
+                <div class="text-zinc-300"><%= order.phoneNumber %></div>
+               </td>
+               <td class="py-4 px-6 truncate text-white font-bold text-lg">
+                <%= order.deliveryAddress%>
+               </td>
+               <td>
+                <% if (order.foodItem) { %>
+                <span class="bg-orange-400/10 animate-pulse border border-amber-400 p-2 rounded-xl text-amber-300 "> <%= order.foodItem.name %></span>
+                <% } %>
+               </td>
+               <td class="py-4 px-6 text-lg font-bold"><%= order.planType %></td>
+               <td>
+                <% 
+        
+        let statusClasses = "";
+        if (order.status === 'Pending') {
+            statusClasses = "bg-amber-500/10 text-amber-500 border border-amber-500/20";
+        } else if (order.status === 'Confirmed') {
+            statusClasses = "bg-blue-500/10 text-blue-400 border border-blue-500/20";
+        } else if (order.status === 'Delivered') {
+            statusClasses = "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20";
+        }
+    %>
+    
+    <span class="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider animate-pulse <%= statusClasses %>">
+        <%= order.status %>
+    </span>
+</td>
+               </td>
+            </tr>
+           <% }) %>
+        <%} %>
+    </tbody>
+</table>
+</div>
+</div>
+
+
+<!--     
+        <div class="flex justify-between items-center mb-8 border-b border-zinc-800 pb-5">
+            <div>
+                <h1 class="text-3xl font-black uppercase tracking-tight">Food Paradise <span
+                        class="text-orange-500">Dashboard</span></h1>
+                <p class="text-zinc-400 text-xs mt-1">Manage today's daily mess and tiffin subscriptions</p>
+            </div>
+        
+            <div class="bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-xl text-center">
+                <span class="text-xs text-zinc-500 block uppercase font-bold">Total Orders</span>
+                
+                <span class="text-xl font-black text-orange-400">
+                    <%= orders.length %>
+                </span>
+            </div>
+        </div>
+
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-zinc-950 text-zinc-400 text-xs uppercase tracking-wider border-b border-zinc-800">
+                            <th class="py-4 px-6">Customer Details</th>
+                            <th class="py-4 px-6">Address / Room</th>
+                            <th class="py-4 px-6">Meal Details</th>
+                            <th class="py-4 px-6">Plan Type</th>
+                            <th class="py-4 px-6">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-zinc-800/60 text-sm">
+
+                        <% if(orders.length===0) { %>
+                            <tr>
+                                <td colspan="5" class="text-center py-12 text-zinc-500 font-medium">
+                                    Abhi tak koi order place nahi hua 😴
+                                </td>
+                            </tr>
+                            <% } else { %>
+
+                                
+                                <% orders.forEach(order=> { %>
+                                    <tr class="hover:bg-zinc-800/30 transition-colors">
+
+                                        <td class="py-4 px-6">
+                                            <div class="font-bold text-zinc-200">
+                                                <%= order.customerName %>
+                                            </div>
+                                            <div class="text-xs text-zinc-500 mt-0.5">
+                                                <%= order.phoneNumber %>
+                                            </div>
+                                        </td>
+
+                                        <td class="py-4 px-6 text-zinc-300 max-w-xs truncate">
+                                            <%= order.deliveryAddress %>
+                                        </td>
+
+                                      
+                                        <td class="py-4 px-6">
+                                            <% if(order.foodItem) { %>
+                                                
+
+                                                <span
+                                                    class="bg-orange-500/10 border border-orange-500/20 text-orange-400 px-2.5 py-1 rounded-md text-xs font-semibold">
+                                                    <%= order.foodItem.name %>
+                                                </span>
+                                                <% } else { %>
+                                                    
+                                                    <span class="text-red-400 text-xs">Deleted Item</span>
+                                                    <% } %>
+                                        </td>
+
+                                        <td class="py-4 px-6">
+                                            <span class="text-zinc-400 font-medium">
+                                                <%= order.planType %>
+                                            </span>
+                                        </td>
+
+                                       
+<td class="py-4 px-6">
+    <% 
+        
+        let statusClasses = "";
+        if (order.status === 'Pending') {
+            statusClasses = "bg-amber-500/10 text-amber-500 border border-amber-500/20";
+        } else if (order.status === 'Confirmed') {
+            statusClasses = "bg-blue-500/10 text-blue-400 border border-blue-500/20";
+        } else if (order.status === 'Delivered') {
+            statusClasses = "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20";
+        }
+    %>
+    
+    <span class="px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider <%= statusClasses %>">
+        <%= order.status %>
+    </span>
+</td>
+                                    </tr>
+                                    <% }) %>
+                                        <% } %>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>  -->
+
+</body>
+
+</html>
